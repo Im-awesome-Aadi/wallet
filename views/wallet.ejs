@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title  %> </title>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+   <%- include('./includes/navigation.ejs') %>
+    
+    <h2>Wallet Balance is <%= balance %>  </h2>
+
+    <h3>Wallet History</h3>
+
+    <% for (let his of history) { %>
+    <a href="/view_transactions/<%= his.id %>">
+        <div>
+            <p> <%= his.type %>  </p>
+            <p>Amount Added <%= his.amount %>  </p>
+        </div>
+    </a>
+        <% } %> 
+
+</body>
+</html>

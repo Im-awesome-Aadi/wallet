@@ -1,0 +1,40 @@
+<div class="backdrop"></div>
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item">
+                <a  class="<%= path === '/home' ? 'active' : '' %>" href="/home">Home</a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path === '/wallet' ? 'active' : '' %>" href="/wallet">Wallet</a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path === '/addtowallet' ? 'active' : '' %>" href="/addtowallet">Add to Wallet</a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path === '/orders' ? 'active' : '' %>" href="/orders">Send</a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path === '/profile' ? 'active' : '' %>" href="/profile">Edit Profile</a>
+            </li>
+        </ul>
+
+
+        <ul class="main-header__item-list">
+            <% if (!isAuthenticated) { %>
+                <li class="main-header__item">
+                    <a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a>
+                </li>
+                <li class="main-header__item">
+                    <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">Signup</a>
+                </li>
+            <% } else { %>
+                <li class="main-header__item">
+                    <form action="/logout" method="post">
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+            <% } %>
+        </ul>
+    </nav>
+</header>
